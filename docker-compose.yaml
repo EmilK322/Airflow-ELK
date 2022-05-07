@@ -295,7 +295,7 @@ services:
       - "5601:5601"
 
   logstash:
-    image: docker.elastic.co/logstash/logstash:7.5.2
+    image: docker.elastic.co/logstash/logstash:8.2.0
     restart: always
     depends_on:
       - elasticsearch
@@ -306,7 +306,7 @@ services:
   # How to Tune Elastic Beats Performance: A Practical Example with Batch Size, Worker Count, and More
   # https://www.elastic.co/blog/how-to-tune-elastic-beats-performance-a-practical-example-with-batch-size-worker-count-and-more?blade=tw&hulk=social
   filebeat:
-    image: docker.elastic.co/beats/filebeat:${ELASTIC_VERSION:-7.5.2}
+    image: docker.elastic.co/beats/filebeat:${ELASTIC_VERSION:-8.2.0}
     restart: always
     depends_on:
       - logstash
